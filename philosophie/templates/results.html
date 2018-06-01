@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block title %}Liens{% endblock %}
+
+{% block header %}Résultats {{ session.article }}, Redirection {{ session.counter }}{% endblock %}
+{% block content %}
+  <form>
+    <p>Choisissez le sujet lié :</p>
+      <div>
+  {% for link in links %}
+        <input type="radio" id="{{link}}" name="destination" value="{{link}}">
+        <label for="{{link}}">{{link}}</label>
+        <br>
+  {% endfor %}
+      </div>
+      <div>
+        <button type="submit">Envoyer</button>
+      </div>
+  </form>
+{% endblock %}
